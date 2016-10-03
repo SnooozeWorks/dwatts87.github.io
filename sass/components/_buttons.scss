@@ -1,0 +1,6 @@
+.btn-primary {
+  @include button-variant(#fff, #00b5bf, #00b5bf);
+  border: none;
+  border-radius: 3px;
+  padding: 5px 70px
+}

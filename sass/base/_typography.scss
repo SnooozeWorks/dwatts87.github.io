@@ -1,0 +1,89 @@
+// Typography
+
+@import url(https://fonts.googleapis.com/css?family=Oswald|Gloria+Hallelujah|Lora);
+
+// Variables
+
+$defaultFontFamily: 'Lora', sans-serif;
+$defaultFontSize: 16px;
+$defaultFontWeight: 300;
+
+$fixed-font: 'Andale Mono', AndaleMono, monospace;
+$fixed-size: 15px;
+$fixed-line-height: 1.2;
+
+$heading-font: 'Oswald', sans-serif;
+$heading-weight: 700;
+
+// End Variables
+
+body {
+  color: $text-color;
+  font-size: $defaultFontSize;
+  font-family: $defaultFontFamily;
+  font-weight: $defaultFontWeight;
+  line-height: 1.6;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $heading-font;
+  font-weight: $heading-weight;
+}
+
+.h1, .h2 {line-height: 1.1;}
+
+.h1 {font-size: 400%; letter-spacing: -2px;}
+.h2 {font-size: 250%; letter-spacing: -1px;}
+.h3 {font-size: 200%;}
+.h4 {font-size: 180%;}
+.h5 {font-size: 130%;}
+
+.fixed {font-family: $fixed-font; font-size: $fixed-size; line-height: $fixed-line-height;}
+
+// Modifiers
+
+.quiet {font-color: $quiet-color;}
+.loud {font-color: $loud-color;}
+.italic {font-style: italic;}
+.bold {font-weight: 700; @extend .loud;}
+.left {text-align: left;}
+.center {text-align: center;}
+.right {text-align: right;}
+.justify {text-align: justify;}
+
+.block-margins {margin: .5em 0;}
+
+.unordered-list {list-style-type: disc;}
+.ordered-list {list-style: decimal;}
+
+// End Modifiers
+
+.typography {
+  em {@extend .italic;}
+  b, strong {@extend .bold;}
+
+  h1, .h1 {@extend .h1; margin: 0;}
+  h2, .h2 {@extend .h2; margin: 1em 0 0.5em;}
+  h3, .h3 {@extend .h3; margin: 1em 0 0.5em;}
+  h4, .h4 {@extend .h4; margin: 1em 0 0.5em;}
+  h5, .h5 {@extend .h5; margin: .5em 0 0.5em;}
+
+  p, ul, ol, pre {@extend .block-margins;}
+
+  ul {@extend .unordered-list;}
+  ol {@extend .ordered-list;}
+
+  pre, code {@extend .fixed;}
+}
+
+a {
+  color: $text-color;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+.blockquote {
+  font-size: 100%;
+}
